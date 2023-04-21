@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+ 
+
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+  <div class="container-fluid my-1 px-0">
+            <img class="d-block w-100" style="height: 340px;" src="/static/img/contact-1.jpg" alt="First slide">
+  </div>
+  <div class="container">
+    <h1 class="text-center">Contact Us</h1>
+
+
+
+
+    {% comment %}Contact Form {% endcomment %}
+    <form method="post" action="/contact/" class="needs-validation" novalidate>
+      
+      {% csrf_token %}
+
+
+  {% comment %} Name input form {% endcomment %}
+
+
+      <div class="form-group">
+        <span class="material-symbols-outlined">
+          person
+          </span>
+        <input type="name" class="form-control" id="validationTooltip01" name="name" placeholder="Enter your Name" required>
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      
+
+      {% comment %} Email input form {% endcomment %}
+      <div class="form-group">
+        <span class="material-symbols-outlined">
+          email
+          </span>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email-ID">
+      </div>
+
+
+
+      {% comment %} Phone input form {% endcomment %}
+
+      <div class="form-group">
+        <span class="material-symbols-outlined">
+          phone
+          </span>
+        <input type="text" class="form-control" id="phone" name="phone"  placeholder="Your Mobile number">
+      </div>
+      <div class="form-group">
+
+
+  {% comment %} Desc input form {% endcomment %}
+  <span class="material-symbols-outlined">
+    info
+    </span>
+        <textarea class="form-control" id="desc" name="desc"  rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+  
+{% endblock body %}
